@@ -19,7 +19,7 @@ class App extends Component {
             alert("Please enter all details")
          else {
             try {
-                var res = await fetch("http://localhost:3020/insert", {
+                var res = await fetch("https://react-crud-server.herokuapp.com/insert", {
                     method: "POST",
                     body: JSON.stringify(
                         {fname: this.state.fname, lname: this.state.lname, email: this.state.email}
@@ -43,7 +43,7 @@ class App extends Component {
             alert("Please enter all details")
          else {
             try {
-                var res = await fetch("http://localhost:3020/update", {
+                var res = await fetch("https://react-crud-server.herokuapp.com/update", {
                     method: "POST",
                     body: JSON.stringify(
                         {fname: this.state.fname, lname: this.state.lname, email: this.state.email}
@@ -67,7 +67,7 @@ class App extends Component {
             alert("Please enter email")
          else {
             try {
-                var res = await fetch("http://localhost:3020/delete", {
+                var res = await fetch("https://react-crud-server.herokuapp.com/delete", {
                     method: "POST",
                     body: JSON.stringify(
                         {email: this.state.email}
@@ -90,7 +90,7 @@ class App extends Component {
     display = async () => {
 
         try {
-            var res = await fetch("http://localhost:3020/display")
+            var res = await fetch("https://react-crud-server.herokuapp.com/display")
             var result = await res.json()
             this.setState({resarray: result})
         } catch (err) {
